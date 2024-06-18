@@ -1,0 +1,23 @@
+server:
+    servlet:
+        context-path: /${spring.application.name}
+spring:
+    application:
+        name: spring_cloud_server
+    cloud:
+        config:
+            server:
+                bootstrap: true
+                git:
+                    force-pull: true
+                    password: <password>
+                    uri: <uri>
+                    username: <username>
+    profiles:
+        active: git
+    security:
+        user:
+            name: <name>
+            password: <password>
+encrypt:
+    key: <key>
