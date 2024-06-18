@@ -57,8 +57,9 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
                         authorizationManagerRequestMatcherRegistry.requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")
                                 //.requestMatchers("/**").hasAnyRole("ADMIN")
-                                .requestMatchers("/**").hasAnyRole("USER")
                                 .requestMatchers("/actuator/**").permitAll()
+                                .requestMatchers("/**").hasAnyRole("USER")
+
                                 .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(httpSecuritySessionManagementConfigurer -> httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
