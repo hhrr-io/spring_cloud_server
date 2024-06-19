@@ -14,7 +14,8 @@ spring:
                     uri: <uri>
                     username: <username>
                 native:
-                    search-locations: file:///C:/Users/taxie/Desktop/clases/Infraestructure_npe
+                    search-locations: file:\mnt\c\Users\taxie\Desktop\clases\Infraestructure_npe
+                    #search-locations: file:///C:/Users/taxie/Desktop/clases/Infraestructure_npe
     profiles:
         active: git,native
     security:
